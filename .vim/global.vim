@@ -33,7 +33,8 @@ set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
 
 " Color
-color jellybeans
+"color jellybeans
 
 " Quit with :Q
 command -nargs=0 Quit :qa!
+
