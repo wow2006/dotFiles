@@ -1,12 +1,14 @@
 set nocompatible
 filetype off
 
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+call vundle#begin('~/some/path/here')
 
-" Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles
 Bundle 'tpope/vim-sensible'
@@ -19,7 +21,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 " Start color_coded
-"Bindle 'jeaye/color_coded'
+Bindle 'jeaye/color_coded'
 " End color_coded
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -30,7 +32,7 @@ Bundle 'rdnetto/YCM-Generator'
 Bundle 'petRUShka/vim-opencl'
 " End OpenCL
 " Start MarkDown Plugin
-"Plugin 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " End MarkDown
 " Add Git
@@ -46,10 +48,6 @@ Bundle 'rhysd/vim-clang-format'
 " CMake
 Bundle 'jalcine/cmake.vim'
 " End of CMake
-" Start LLDB
-"Bundle 'gilligan/vim-lldb'
-" End LLDB
-
 
 filetype plugin indent on
 
@@ -59,8 +57,6 @@ source ~/.vim/hotkey.vim
 source ~/.vim/NERDTree.vim
 source ~/.vim/CtrlP.vim
 source ~/.vim/DoxygenToolKit.vim
-"source ~/.vim/Tagbar.vim
 source ~/.vim/airline.vim
 source ~/.vim/dictionary.vim
 source ~/.vim/folding.vim
-source ~/.vim/clang-format
