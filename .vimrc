@@ -4,59 +4,44 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" My Bundles
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-" Replace vim-powerline
+" Start airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" end of airline
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-" Start color_coded
-Bindle 'jeaye/color_coded'
-" End color_coded
+" End airline
+" Start NERDtree
+Plugin 'scrooloose/nerdtree'
+" End NERDtree
+" Start Jellybeans
+Plugin 'nanotech/jellybeans.vim'
+" End Jellybeans
+" Start Tagbar
+Plugin 'majutsushi/tagbar'
+" End Tagbar
+" Start YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-" Start YCM-G
-Bundle 'rdnetto/YCM-Generator'
-" End   YCM-G
-" Start OpenCL
-Bundle 'petRUShka/vim-opencl'
-" End OpenCL
-" Start MarkDown Plugin
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" End MarkDown
-" Add Git
-Bundle 'motemen/git-vim'
-" End Git
-" Show WhiteSpaces
-Bundle 'ntpeters/vim-better-whitespace'
-" End of WhiteSpaces
-" Clang Format
-Bundle 'kana/vim-operator-user'
-Bundle 'rhysd/vim-clang-format'
-" End of Clang Format
-" CMake
-Bundle 'jalcine/cmake.vim'
-" End of CMake
+Plugin 'rdnetto/YCM-Generator'
+" End YouCompleteMe
+" Start ColorCoded
+"Plugin 'jeaye/color_coded'
+" End ColorCoded
+" Start Doxygen
+Plugin 'mrtazz/DoxygenToolkit.vim'
+" End Doxygen
 
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
+" Include Files
 source ~/.vim/global.vim
-source ~/.vim/youcompleteme.vim
-source ~/.vim/hotkey.vim
 source ~/.vim/NERDTree.vim
-source ~/.vim/CtrlP.vim
-source ~/.vim/DoxygenToolKit.vim
+source ~/.vim/youcompleteme.vim
 source ~/.vim/airline.vim
 source ~/.vim/dictionary.vim
 source ~/.vim/folding.vim
+source ~/.vim/hotkey.vim
+"source ~/.vim/color_coded.vim
+source ~/.vim/DoxygenToolKit.vim

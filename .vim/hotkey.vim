@@ -25,7 +25,7 @@ map <silent> <F11> :Dox<CR>
 map <silent> <F12> :DoxAuthor<CR>
 
 " Tagbar
-"nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 if expand('%:t') == 'CMakeLists.txt'
     " Dictionary
