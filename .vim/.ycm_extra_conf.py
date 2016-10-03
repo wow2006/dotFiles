@@ -37,7 +37,6 @@ import ycm_core
 flags = [
 '-Wall',
 '-Wextra',
-'-Werror',
 '-Wc++98-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
@@ -81,6 +80,12 @@ flags = [
 './tests/gmock',
 '-isystem',
 './tests/gmock/include',
+'-I',
+'/usr/include/',
+'-I',
+'/usr/local/include/',
+'-I',
+'/usr/include/c++/6.1.1/',
 ]
 
 
