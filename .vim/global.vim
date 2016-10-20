@@ -2,6 +2,7 @@ let mapleader=","
 " Doxygen Syntax
 let g:load_doxygen_syntax=1
 
+syntax on
 set cursorline
 set encoding=utf-8
 set nowrap
@@ -39,3 +40,6 @@ let g:airline_theme='jellybeans'
 " Quit with :Q
 command -nargs=0 Quit :qa!
 
+" CUDA
+au BufNewFile,BufRead *.cu set ft=cuda
+au BufNewFile,BufRead *.cuh set ft=cuda

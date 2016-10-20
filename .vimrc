@@ -25,7 +25,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 " End YouCompleteMe
 " Start ColorCoded
-"Plugin 'jeaye/color_coded'
+Plugin 'jeaye/color_coded'
 " End ColorCoded
 " Start Doxygen
 Plugin 'mrtazz/DoxygenToolkit.vim'
