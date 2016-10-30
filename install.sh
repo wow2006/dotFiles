@@ -8,3 +8,5 @@ sudo dnf install automake gcc gcc-c++ kernel-devel cmake
 sudo dnf install python-devel python3-devel
 cd ~/.vim/bundle/YouCompleteMe
 python install.py --clang-completer
+# Install format
+sudo dnf install clang-format-3.8
