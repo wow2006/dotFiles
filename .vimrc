@@ -30,6 +30,10 @@ Plugin 'jeaye/color_coded'
 " Start Doxygen
 Plugin 'mrtazz/DoxygenToolkit.vim'
 " End Doxygen
+" Start Clang Format
+Plugin 'rhysd/vim-clang-format'
+Plugin 'kana/vim-operator-user'
+" End   Clang Format
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,5 +47,6 @@ source ~/.vim/airline.vim
 source ~/.vim/dictionary.vim
 source ~/.vim/folding.vim
 source ~/.vim/hotkey.vim
-"source ~/.vim/color_coded.vim
+source ~/.vim/color_coded.vim
 source ~/.vim/DoxygenToolKit.vim
+source ~/.vim/clangFormat.vim
