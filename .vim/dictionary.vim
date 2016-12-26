@@ -6,3 +6,8 @@ if expand('%:t') == 'CMakeLists.txt'
     iabbrev mac macro( 
     iabbrev fun function( 
 endif
+
+"if expand('%:e') == 'cu'
+"    set dictionary+=~/.vim/dictionary/cuda.txt
+"    set 
+"endif

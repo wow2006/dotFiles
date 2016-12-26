@@ -24,8 +24,11 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 " End YouCompleteMe
+" Start vim-cpp-enhanced
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" End   vim-cpp-enhanced
 " Start ColorCoded
-Plugin 'jeaye/color_coded'
+"Plugin 'jeaye/color_coded'
 " End ColorCoded
 " Start Doxygen
 Plugin 'mrtazz/DoxygenToolkit.vim'
@@ -34,10 +37,21 @@ Plugin 'mrtazz/DoxygenToolkit.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'kana/vim-operator-user'
 " End   Clang Format
+" Start anyfold
+Plugin 'pseewald/vim-anyfold'
+" End   andfold
+" Start indectLine
+Plugin 'Yggdroot/indentLine'
+" End indectLine
+" Start BookMark
+Plugin 'MattesGroeger/vim-bookmarks'
+" End BookMark
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+set bs=indent,eol,start     " Backspace over everything in insert mode
 
 " Include Files
 source ~/.vim/global.vim
@@ -50,3 +64,5 @@ source ~/.vim/hotkey.vim
 source ~/.vim/color_coded.vim
 source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/clangFormat.vim
+source ~/.vim/syntax.vim
+source ~/.vim/bookmark.vim
