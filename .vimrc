@@ -46,6 +46,9 @@ Plugin 'Yggdroot/indentLine'
 " Start BookMark
 Plugin 'MattesGroeger/vim-bookmarks'
 " End BookMark
+" Start Ctrl-P
+Plugin 'ctrlpvim/ctrlp.vim'
+" End   Ctrl-P
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

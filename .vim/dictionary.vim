@@ -7,7 +7,6 @@ if expand('%:t') == 'CMakeLists.txt'
     iabbrev fun function( 
 endif
 
-"if expand('%:e') == 'cu'
-"    set dictionary+=~/.vim/dictionary/cuda.txt
-"    set 
-"endif
+if expand('%:e') == 'cu'
+    set dictionary+=~/.vim/dictionary/cuda.txt
+endif
