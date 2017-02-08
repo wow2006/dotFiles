@@ -28,10 +28,11 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 " End   vim-cpp-enhanced
 " Start ColorCoded
-"Plugin 'jeaye/color_coded'
+Plugin 'jeaye/color_coded'
 " End ColorCoded
 " Start Doxygen
 Plugin 'mrtazz/DoxygenToolkit.vim'
+Plugin 'junegunn/vim-easy-align'
 " End Doxygen
 " Start Clang Format
 Plugin 'rhysd/vim-clang-format'
@@ -49,6 +50,12 @@ Plugin 'MattesGroeger/vim-bookmarks'
 " Start Ctrl-P
 Plugin 'ctrlpvim/ctrlp.vim'
 " End   Ctrl-P
+" Start MiniMap
+Plugin 'severin-lemaignan/vim-minimap'
+" End MiniMap
+" Start vim-side-search
+Plugin 'ddrscott/vim-side-search'
+" End   vim-side-search
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

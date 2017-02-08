@@ -3,8 +3,6 @@ __device__
 __shared__
 __syncthreads();
 threadIdx
-blockIdx.
-blockDim.
-<<<
->>>
+blockIdx
+blockDim
 
