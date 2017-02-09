@@ -76,3 +76,4 @@ source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/clangFormat.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
+source ~/.vim/searchSide.vim
