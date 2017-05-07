@@ -7,6 +7,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+" Start A
+Plugin 'vim-scripts/a.vim'
+" End   A
 " Start airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -24,15 +27,11 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 " End YouCompleteMe
-" Start vim-cpp-enhanced
-Plugin 'octol/vim-cpp-enhanced-highlight'
-" End   vim-cpp-enhanced
 " Start ColorCoded
 Plugin 'jeaye/color_coded'
 " End ColorCoded
 " Start Doxygen
 Plugin 'mrtazz/DoxygenToolkit.vim'
-Plugin 'junegunn/vim-easy-align'
 " End Doxygen
 " Start Clang Format
 Plugin 'rhysd/vim-clang-format'
@@ -53,9 +52,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Start MiniMap
 Plugin 'severin-lemaignan/vim-minimap'
 " End MiniMap
-" Start vim-side-search
-Plugin 'ddrscott/vim-side-search'
-" End   vim-side-search
+" Start vim-easy-align
+Plugin 'junegunn/vim-easy-align'
+" End vim-easy-align
+" Start Simply-Vim
+Plugin 'tmhedberg/SimpylFold'
+" End   Simply-Vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -76,4 +78,4 @@ source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/clangFormat.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
-source ~/.vim/searchSide.vim
+source ~/.vim/pythonInterface.vim

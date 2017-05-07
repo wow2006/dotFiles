@@ -11,6 +11,9 @@ map <silent> <F7>   :YcmCompleter FixIt<CR>
 "map <silent> <S-F7> :YcmCompleter GetParent<CR>
 map <silent> <F8> :YcmCompleter GetType<CR>
 
+map <silent> gn :bn<CR>
+map <silent> gp :bp<CR>
+
 " NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
@@ -30,3 +33,9 @@ if expand('%:e') == 'cu'
     " Dictionary
     imap <C-space> <C-x><C-k>
 endif
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
