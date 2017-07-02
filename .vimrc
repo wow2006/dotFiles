@@ -27,9 +27,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 " End YouCompleteMe
-" Start ColorCoded
-Plugin 'jeaye/color_coded'
-" End ColorCoded
 " Start Doxygen
 Plugin 'mrtazz/DoxygenToolkit.vim'
 " End Doxygen
@@ -73,9 +70,7 @@ source ~/.vim/airline.vim
 source ~/.vim/dictionary.vim
 source ~/.vim/folding.vim
 source ~/.vim/hotkey.vim
-source ~/.vim/color_coded.vim
 source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/clangFormat.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
-source ~/.vim/pythonInterface.vim
