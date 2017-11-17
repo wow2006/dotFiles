@@ -36,5 +36,7 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 
 # Install format
-sudo apt-get install clang-format
+sudo apt install clang-format
 
+# install gawk for Ack
+sudo apt install gawk
