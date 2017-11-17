@@ -84,7 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias myENV="vim ~/.usr/.env"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv vcs history)
@@ -95,6 +94,3 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64
  
 PATH=${CUDA_HOME}/bin:${PATH} 
 export PATH 
-
-# USR PATH
-source ~/.usr/.env
