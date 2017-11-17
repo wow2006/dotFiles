@@ -55,6 +55,9 @@ Plugin 'junegunn/vim-easy-align'
 " Start Simply-Vim
 Plugin 'tmhedberg/SimpylFold'
 " End   Simply-Vim
+" Start Ack
+Plugin 'mileszs/ack.vim'
+" End   Ack
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
