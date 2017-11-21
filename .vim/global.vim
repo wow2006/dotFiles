@@ -43,3 +43,6 @@ command -nargs=0 Quit :qa!
 " CUDA
 au BufNewFile,BufRead *.cu set ft=cuda
 au BufNewFile,BufRead *.cuh set ft=cuda
+
+" yank and paste xclip
+set clipboard+=unnamedplus
