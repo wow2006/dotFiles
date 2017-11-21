@@ -38,5 +38,5 @@ cd ~/.vim/bundle/YouCompleteMe
 # Install format
 sudo apt install clang-format
 
-# install gawk for Ack
-sudo apt install gawk
+# install ack and xclip
+sudo apt install ack-grep xclip
