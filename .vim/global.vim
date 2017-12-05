@@ -1,6 +1,6 @@
 let mapleader=","
 " Doxygen Syntax
-let g:load_doxygen_syntax=1
+let g:load_doxygen_syntax=3
 
 syntax on
 set cursorline
@@ -14,8 +14,8 @@ set hlsearch
 set ignorecase
 set smartcase
 " TAB Control
-set tabstop=4  
-set shiftwidth=4  
+set tabstop=2
+set shiftwidth=2
 set expandtab  
 set softtabstop=4  
 set smarttab
@@ -33,9 +33,7 @@ set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 
-" Color
-color jellybeans
-let g:airline_theme='jellybeans'
+colorscheme iceberg
 
 " Quit with :Q
 command -nargs=0 Quit :qa!
@@ -44,5 +42,5 @@ command -nargs=0 Quit :qa!
 au BufNewFile,BufRead *.cu set ft=cuda
 au BufNewFile,BufRead *.cuh set ft=cuda
 
-" yank and paste xclip
+set relativenumber
 set clipboard+=unnamedplus

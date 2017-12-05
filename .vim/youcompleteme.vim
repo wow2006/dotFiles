@@ -5,17 +5,17 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_show_diagnostics_ui = 1
 " YCM will use the value of this option as the symbol for errors in the Vim
 " gutter.
-let g:ycm_error_symbol = '>'
+let g:ycm_error_symbol = '×'
 " YCM will use the value of this option as the symbol for warnings in the Vim
 " gutter.
-let g:ycm_warning_symbol = '*'
+let g:ycm_warning_symbol = 'Ø'
 " YCM will put icons in Vim's gutter on lines that have a diagnostic set.
 " Turning this off will also turn off the YcmErrorLine and YcmWarningLine
 " highlighting.
 let g:ycm_enable_diagnostic_signs = 1
 " YCM will highlight regions of text that are related to the diagnostic that
 " is present on a line, if any.
-let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_enable_diagnostic_highlighting = 1
 " YCM will echo the text of the diagnostic present on the current line when
 " you move your cursor to that line
 let g:ycm_echo_current_diagnostic = 1
@@ -67,3 +67,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 "
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+
+if expand('%:e') == 'py'
+  let python_root = substitute(system('which python'), '\n\+$', '', '')
+  let g:ycm_python_binary_path=python_root
+endif

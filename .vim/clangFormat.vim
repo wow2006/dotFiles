@@ -1,5 +1,4 @@
-let g:clang_format#command = "clang-format-3.8"
-autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
+let g:clang_format#command = "clang-format"
 
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
