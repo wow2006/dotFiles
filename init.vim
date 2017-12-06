@@ -16,7 +16,6 @@ Plug 'majutsushi/tagbar'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator'
 Plug 'arakashic/chromatica.nvim'
-Plug 'vim-syntastic/syntastic'
 " End YouCompleteMe
 " Start Doxygen
 Plug 'mrtazz/DoxygenToolkit.vim'
@@ -25,9 +24,6 @@ Plug 'mrtazz/DoxygenToolkit.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 " End   Clang Format
-" Start anyfold
-Plug 'pseewald/vim-anyfold'
-" End   andfold
 " Start indectLine
 Plug 'Yggdroot/indentLine'
 " End indectLine
@@ -43,14 +39,20 @@ Plug 'severin-lemaignan/vim-minimap'
 " Start vim-easy-align
 Plug 'junegunn/vim-easy-align'
 " End vim-easy-align
-" Start Simply-Vim
-Plug 'tmhedberg/SimpylFold'
-" End   Simply-Vim
+" Start FastFold
+Plug 'Konfekt/FastFold'
 " Start Ack
 Plug 'mileszs/ack.vim'
 " End   Ack
-" DevIcons
+" Start sourcetrail
+Plug 'CoatiSoftware/vim-sourcetrail'
+" End   sourcetrail
+" Icon
 Plug 'ryanoasis/vim-devicons'
+" Git
+Plug 'airblade/vim-gitgutter'
+" Debug
+Plug 'critiqjo/lldb.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -68,5 +70,4 @@ source ~/.vim/clangFormat.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
 source ~/.vim/chromatica.vim
-source ~/.vim/syntastic.vim
 source ~/.vim/Zoom.vim

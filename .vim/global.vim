@@ -16,8 +16,8 @@ set smartcase
 " TAB Control
 set tabstop=2
 set shiftwidth=2
-set expandtab  
-set softtabstop=4  
+set expandtab
+set softtabstop=2
 set smarttab
 " Set Terminal Tab to name of VIM file
 " Don't set the title to 'Thanks for flying Vim' when exiting
@@ -33,7 +33,9 @@ set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 
+" Color
 colorscheme iceberg
+let g:airline_theme='iceberg'
 
 " Quit with :Q
 command -nargs=0 Quit :qa!
@@ -41,6 +43,6 @@ command -nargs=0 Quit :qa!
 " CUDA
 au BufNewFile,BufRead *.cu set ft=cuda
 au BufNewFile,BufRead *.cuh set ft=cuda
-
-set relativenumber
+" yank and paste xclip
 set clipboard+=unnamedplus
+set relativenumber
