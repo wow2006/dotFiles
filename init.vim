@@ -1,5 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+" let Vundle manage Vundle, required
+Plug 'VundleVim/Vundle.vim'
 " Start A
 Plug 'vim-scripts/a.vim'
 " Start airline
@@ -7,8 +9,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Start NERDtree
 Plug 'scrooloose/nerdtree'
-" color iceberg
-Plug 'cocopon/iceberg.vim'
+" color tender
+Plug 'jacoborus/tender.vim'
 " Start Tagbar
 Plug 'majutsushi/tagbar'
 " End Tagbar
@@ -70,4 +72,3 @@ source ~/.vim/clangFormat.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
 source ~/.vim/chromatica.vim
-source ~/.vim/Zoom.vim

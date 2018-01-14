@@ -34,8 +34,17 @@ set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
 
 " Color
-colorscheme iceberg
-let g:airline_theme='iceberg'
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Theme
+syntax enable
+colorscheme tender
 
 " Quit with :Q
 command -nargs=0 Quit :qa!
@@ -43,6 +52,12 @@ command -nargs=0 Quit :qa!
 " CUDA
 au BufNewFile,BufRead *.cu set ft=cuda
 au BufNewFile,BufRead *.cuh set ft=cuda
+" PTX
+if expand('%:e') == 'ptx'
+    set syntax=asm
+endif
+
+set termguicolors 
 " yank and paste xclip
 set clipboard+=unnamedplus
 set relativenumber
