@@ -7,7 +7,7 @@
 - [A](https://github.com/vim-scripts/a.vim)
 - [Airline](https://github.com/vim-airline/vim-airline)
 - [NerdTree](https://github.com/scrooloose/nerdtree)
-- [Iceberg](https://github.com/cocopon/iceberg.vim)
+- [tender](https://github.com/jacoborus/tender.vim)
 - [Tagbar](https://github.com/majutsushi/tagbar)
 - [YouCompeleteMe](https://github.com/Valloric/YouCompleteMe)
 - [YCM-Generator](https://github.com/rdnetto/YCM-Generator)
