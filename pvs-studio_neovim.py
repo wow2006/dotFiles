@@ -30,7 +30,7 @@ class PVM(object):
         if(not args):
             self.readPVM()
         else:
-            self.readPVM(args)
+            self.readPVM(args[0])
 
     def readPVM(self, analysisFilter="GA:1,2,3"):
         chdir(self.buildDir)
