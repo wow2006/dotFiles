@@ -12,34 +12,49 @@ class PVM(object):
     def __init__(self, vim) -> None:
         self.vim = vim
         self.pvs_command = "pvs-studio-analyzer analyze"
-        self.ans_command = "plog-converter -a GA:1,2,3 -t errorfile PVS-Studio.log"
+        self.ans_command = "plog-converter -a %s -t errorfile PVS-Studio.log"
 
         self.buildDir = ''
 
     @neovim.command("PVMsetBuild", range='', nargs='*')
     def setBuild(self, args, range):
-        self.buildDir = args[0]
-        self.vim.current.line = self.buildDir
-        
+        if(not range and not isdir(args[0])):
+            self.vim.out_write("Please write build dir")
+            return
 
-    @neovim.command('PVManalysis')
-    def analysisPVM(self):
+        self.buildDir = abspath(args[0])
+        self.vim.out_write("Set build dir to {}".format(self.buildDir))
+
+    @neovim.command('PVManalysis', range='', nargs='*')
+    def analysisPVM(self, args, nargs='*'):
+        if(not args):
+            self.readPVM()
+        else:
+            self.readPVM(args)
+
+    def readPVM(self, analysisFilter="GA:1,2,3"):
         chdir(self.buildDir)
 
-        self.vim.current.line = "{} - {}".format(self.buildDir, self.pvs_command)
+        self.vim.out_write("{} - {}\n".format(self.buildDir, self.pvs_command))
         result = subprocess.run(self.pvs_command, shell=True,
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
+        if(result.returncode != 0):
+            self.vim.err_write("ERROR at {}:\n{}\n{}".format(result.args,
+                               result.stderr.decode("utf-8"),
+                               result.stdout.decode("utf-8")))
+            return
 
-        self.readPVM()
-
-
-    def readPVM(self):
-        result = subprocess.run(self.ans_command,
+        self.vim.out_write("{}\n".format(self.ans_command))
+        result = subprocess.run(self.ans_command % analysisFilter,
                                 shell=True, check=True,
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
-        self.vim.out_write(abspath(curdir) + "\n")
+        if(result.returncode != 0):
+            self.vim.err_write("ERROR at {}:\n{}\n{}".format(result.args[0],
+                               result.stderr.decode("utf-8"),
+                               result.stdout.decode("utf-8")))
+            return
 
         result = result.stdout.decode("utf-8").split('\n')
 
