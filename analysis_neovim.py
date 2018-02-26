@@ -12,9 +12,10 @@ from os.path import dirname, exists, isdir, join, abspath
 class Analysis(object):
     def __init__(self, vim):
         self.vim = vim
-        self.pvs_command  = "pvs-studio-analyzer analyze"
-        self.ans_cmmmand  = "plog-converter -a %s -t errorfile PVS-Studio.log"
-        self.tidy_command = 'clang-tidy -format-style=file -p {} -checks={} {}'
+        self.pvs_command    = "pvs-studio-analyzer analyze"
+        self.ans_cmmmand    = "plog-converter -a %s -t errorfile PVS-Studio.log"
+        self.tidy_command   = 'clang-tidy -format-style=file -p {} -checks={} {}'
+        self.oclint_command = 'oclint -p {} {}'
         self.tempFile = join(tempfile.gettempdir(), tempfile.gettempprefix() + "_analysis")
         self.buildDir = ''
 
@@ -40,6 +41,10 @@ class Analysis(object):
                 self.readPVM(args[0])
             else:
                 self.readTidy(args[0])
+
+    @neovim.command('Oclint')
+    def oclint(self):
+        self.readOclint()
 
     def runCommand(self, command):
         self.vim.out_write("{}\n".format(command))
@@ -102,4 +107,18 @@ class Analysis(object):
 
         self.writeToQuickFix(errors, currentFile)
 
+    def readOclint(self):
+        currentFile = self.vim.current.buffer.name
+        if(not currentFile):
+            return
+
+        command = self.oclint_command.format(self.buildDir, currentFile)
+
+        result = self.runCommand(command)
+        if(not result):
+            return
+
+        errors = result.stdout.decode("utf-8")
+
+        self.writeToQuickFix(errors, currentFile)
 
