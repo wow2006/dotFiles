@@ -43,18 +43,20 @@ Plug 'junegunn/vim-easy-align'
 " End vim-easy-align
 " Start FastFold
 Plug 'Konfekt/FastFold'
-" Start Ack
-Plug 'mileszs/ack.vim'
-" End   Ack
 " Start sourcetrail
-Plug 'CoatiSoftware/vim-sourcetrail'
+"Plug 'CoatiSoftware/vim-sourcetrail'
 " End   sourcetrail
 " Icon
 Plug 'ryanoasis/vim-devicons'
 " Git
 Plug 'airblade/vim-gitgutter'
 " Debug
-Plug 'critiqjo/lldb.nvim'
+"Plug 'critiqjo/lldb.nvim'
+"
+
+" If installed using git
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
