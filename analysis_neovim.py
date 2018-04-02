@@ -48,16 +48,19 @@ class Analysis(object):
 
     def runCommand(self, command):
         self.vim.out_write("{}\n".format(command))
-        result = subprocess.run(command,
-                                shell=True, check=True,
-                                stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE)
-        if(result.returncode != 0):
-            self.vim.err_write("ERROR at {}:\n{}\n{}".format(result.args,
-                               result.stderr.decode("utf-8"),
-                               result.stdout.decode("utf-8")))
-            return None
-        return result
+        try:
+            result = subprocess.run(command,
+                                    shell=True, check=True,
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE)
+            if(result.returncode != 0):
+                self.vim.err_write("ERROR at {}:\n{}\n{}".format(result.args,
+                                   result.stderr.decode("utf-8"),
+                                   result.stdout.decode("utf-8")))
+                return None
+            return result
+        except subprocess.CalledProcessError as e:
+            self.vim.err_write(e.output)
 
     def writeToQuickFix(self, errors, currentFile):
         with open(self.tempFile, 'w') as f:
@@ -75,8 +78,7 @@ class Analysis(object):
             return
         command = self.pvs_command
 
-        if(not self.runCommand(command)):
-            return
+        self.runCommand(command)
 
         command = self.ans_cmmmand % analysisFilter
         result = self.runCommand(command)
