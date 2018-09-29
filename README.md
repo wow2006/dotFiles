@@ -36,3 +36,8 @@
     ```sh
     $ sh install_fedora.sh
     ```
+
+- For Arch
+    ```sh
+    $ sh install_arch.sh
+    ```
