@@ -61,3 +61,10 @@ set termguicolors
 " yank and paste xclip
 set clipboard+=unnamedplus
 set relativenumber
+
+" Python tab to 2
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+let g:keysound_enable = 1
+
+xnoremap p "_dP

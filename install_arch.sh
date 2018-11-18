@@ -68,3 +68,5 @@ aurman -S pvs-studio cov-analysis
 mkdir -p ~/.config/nvim/rplugin/python3
 cp analysis_neovim.py ~/.config/nvim/rplugin/python3
 
+# pysdl2 -> keysound
+pip3 install pysdl2 pynvim --user

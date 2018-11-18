@@ -1,19 +1,3 @@
-" YouCompleteMe
-" Calling this command will force YCM to immediately recompile your file and
-" display any new diagnostics it encounters
-map <silent> <F3>   :YcmForceCompileAndDiagnostics<CR>
-map <silent> <F4>   :YcmCompleter GetDoc<CR>
-map <silent> <F5>   :YcmCompleter GoToInclude<CR>
-"map <silent> <C-F5> :YcmCompleter GoToDeclaration<CR>
-"map <silent> <S-F5>   :YcmCompleter GoTo<CR>
-map <silent> <F6> :YcmCompleter GoToDefinition<CR>
-map <silent> <F7>   :YcmCompleter FixIt<CR>
-"map <silent> <S-F7> :YcmCompleter GetParent<CR>
-map <silent> <F8> :YcmCompleter GetType<CR>
-
-map <silent> gn :bn<CR>
-map <silent> gp :bp<CR>
-
 " NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
@@ -42,5 +26,29 @@ nmap ga <Plug>(EasyAlign)
 
 " Fix tab/Index
 map <F9> mzgg=G`z
-" Neomake bind
-map <C-m> :Neomake<CR>
+
+" Map omnifunc to Ctrl-Space
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
+function SetLSPShortcuts()
+  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+endfunction()
+
+augroup LSP
+  autocmd!
+  autocmd FileType cpp,c call SetLSPShortcuts()
+augroup END

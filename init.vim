@@ -15,16 +15,19 @@ Plug 'jacoborus/tender.vim'
 Plug 'majutsushi/tagbar'
 " End Tagbar
 " Start YouCompleteMe
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'rdnetto/YCM-Generator'
-Plug 'arakashic/chromatica.nvim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " End YouCompleteMe
 " Start Doxygen
 Plug 'mrtazz/DoxygenToolkit.vim'
 " End Doxygen
 " Start Clang Format
-Plug 'rhysd/vim-clang-format'
-Plug 'kana/vim-operator-user'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 " End   Clang Format
 " Start indectLine
 Plug 'Yggdroot/indentLine'
@@ -32,9 +35,6 @@ Plug 'Yggdroot/indentLine'
 " Start BookMark
 Plug 'MattesGroeger/vim-bookmarks'
 " End BookMark
-" Start Ctrl-P
-Plug 'ctrlpvim/ctrlp.vim'
-" End   Ctrl-P
 " Start MiniMap
 Plug 'severin-lemaignan/vim-minimap'
 " End MiniMap
@@ -44,7 +44,7 @@ Plug 'junegunn/vim-easy-align'
 " Start FastFold
 Plug 'Konfekt/FastFold'
 " Start sourcetrail
-"Plug 'CoatiSoftware/vim-sourcetrail'
+Plug 'CoatiSoftware/vim-sourcetrail'
 " End   sourcetrail
 " Icon
 Plug 'ryanoasis/vim-devicons'
@@ -52,11 +52,25 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 " Debug
 "Plug 'critiqjo/lldb.nvim'
-"
-
+" cpp highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+" cpp highlight
 " If installed using git
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" GLSL
+Plug 'tikhomirov/vim-glsl'
+" GLSL
+" Sound
+Plug 'skywind3000/vim-keysound'
+" Sound
+" vim-qml
+Plug 'peterhoeg/vim-qml'
+" vim-qml
+" Track the engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
 
 " Initialize plugin system
 call plug#end()
@@ -64,13 +78,13 @@ call plug#end()
 " Include Files
 source ~/.vim/global.vim
 source ~/.vim/NERDTree.vim
-source ~/.vim/youcompleteme.vim
 source ~/.vim/airline.vim
 source ~/.vim/dictionary.vim
 source ~/.vim/folding.vim
+source ~/.vim/fzf.vim
 source ~/.vim/hotkey.vim
 source ~/.vim/DoxygenToolKit.vim
-source ~/.vim/clangFormat.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
-source ~/.vim/chromatica.vim
+source ~/.vim/deoplete.vim
+source ~/.vim/language_client.vim
