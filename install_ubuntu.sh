@@ -19,7 +19,7 @@ mkdir -p $WORKON_HOME
 cp .config ~ -r
 printf "$ZSH_PATH\n$PWR_PATH\nset -sg escape-time 0\n" > ~/.tmux.conf
 printf "unbind C-b\nset -g prefix C-a\nbind C-a send-prefix\n" >> ~/.tmux.conf
-printf "export WORKON_HOME=~/.Envs\nsource ~/.local/bin/virtualenvwrapper.sh\n" >> ~/.tmux.conf
+printf "export WORKON_HOME=~/.Envs\nsource ~/.local/bin/virtualenvwrapper.sh\n" >> ~/.zshrc
 
 # Install oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
