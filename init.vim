@@ -1,7 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" let Vundle manage Vundle, required
-Plug 'VundleVim/Vundle.vim'
 " Start A
 Plug 'vim-scripts/a.vim'
 " Start airline
@@ -71,6 +69,15 @@ Plug 'peterhoeg/vim-qml'
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+" Eye friendly mode
+Plug 'TaDaa/vimade'
+
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+
+Plug 'wow2006/CppUtility-neovim', { 'do': function('DoRemote') }
 
 " Initialize plugin system
 call plug#end()
@@ -88,3 +95,4 @@ source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
 source ~/.vim/deoplete.vim
 source ~/.vim/language_client.vim
+source ~/.vim/vimade.vim
