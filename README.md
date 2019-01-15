@@ -26,6 +26,7 @@
 - [keysound](https://github.com/skywind3000/vim-keysound)
 - [QML](https://github.com/peterhoeg/vim-qml)
 - [ultisnips](https://github.com/SirVer/ultisnips)
+- [vimade](https://github.com/msaleh83/Vimade)
 
 ### Installation:
 - For Ubuntu
