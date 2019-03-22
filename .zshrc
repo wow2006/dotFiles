@@ -9,6 +9,7 @@ export ZSH=/home/ahussein/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -92,5 +93,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv vcs history)
 export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
  
-PATH=${CUDA_HOME}/bin:${PATH} 
+PATH=${CUDA_HOME}/bin:~/.local/bin/:${PATH} 
 export PATH 
+alias vim="nvim"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
