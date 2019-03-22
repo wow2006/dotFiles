@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update system
+sudo pacman -Syu --noconfirm
+
 # Install tmux and zsh
 sudo pacman -S tmux zsh --noconfirm
 
@@ -47,6 +50,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # Install neovim plugs
 vim +PlugInstall +qall
+vim +UpdateRemotePlugins
 
 # install nerd-fonts
 mkdir -p ~/.local/share/fonts
@@ -62,11 +66,17 @@ sudo pacman -S \
      cppcheck  \
      aurman    \
      --noconfirm
-     
-aurman -S pvs-studio cov-analysis
-    
-mkdir -p ~/.config/nvim/rplugin/python3
-cp analysis_neovim.py ~/.config/nvim/rplugin/python3
+
+# Install pvs-studio and source-trail
+aurman -S         \
+     pvs-studio   \
+     source-trail \
+     cov-analysis \
+     --noconfirm
 
 # pysdl2 -> keysound
 pip3 install pysdl2 pynvim --user
+sudo pacman -S \
+  sdl2  \
+     sdl2_mixer \
+     --noconfirm
