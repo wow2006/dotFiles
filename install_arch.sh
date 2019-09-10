@@ -80,3 +80,10 @@ sudo pacman -S \
   sdl2  \
      sdl2_mixer \
      --noconfirm
+
+# common utilities
+pip3 install --user \
+     cmake-checker  \ # check modern cmake
+     cmake-format   \ # format cmake file
+     cppman         \ # man for modern c++
+     tldr             # community-driven man pages
