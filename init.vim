@@ -12,13 +12,10 @@ Plug 'jacoborus/tender.vim'
 " Start Tagbar
 Plug 'majutsushi/tagbar'
 " End Tagbar
-" Start YouCompleteMe
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" End YouCompleteMe
+" Start LanguageClient-neovim
+Plug 'ycm-core/YouCompleteMe'
+Plug 'arakashic/chromatica.nvim'
+" End LanguageClient-neovim
 " Start Doxygen
 Plug 'mrtazz/DoxygenToolkit.vim'
 " End Doxygen
@@ -50,9 +47,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 " Debug
 "Plug 'critiqjo/lldb.nvim'
-" cpp highlight
-Plug 'octol/vim-cpp-enhanced-highlight'
-" cpp highlight
 " If installed using git
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -71,6 +65,13 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Eye friendly mode
 Plug 'TaDaa/vimade'
+" CMake vim
+Plug 'vhdirk/vim-cmake'
+" vim-diff
+Plug 'tpope/vim-fugitive'
+" neomake
+Plug 'neomake/neomake'
+" neomake
 
 
 function! DoRemote(arg)
@@ -93,6 +94,6 @@ source ~/.vim/hotkey.vim
 source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
-source ~/.vim/deoplete.vim
-source ~/.vim/language_client.vim
 source ~/.vim/vimade.vim
+source ~/.vim/youcompleteme.vim
+source ~/.vim/chromatica.vim

@@ -14,10 +14,10 @@ set hlsearch
 set ignorecase
 set smartcase
 " TAB Control
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set softtabstop=2
+set softtabstop=4
 set smarttab
 " Set Terminal Tab to name of VIM file
 " Don't set the title to 'Thanks for flying Vim' when exiting
@@ -57,7 +57,7 @@ if expand('%:e') == 'ptx'
     set syntax=asm
 endif
 
-set termguicolors 
+set termguicolors
 " yank and paste xclip
 set clipboard+=unnamedplus
 set relativenumber
@@ -68,3 +68,4 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 let g:keysound_enable = 1
 
 xnoremap p "_dP
+
