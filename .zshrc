@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/ahussein/.oh-my-zsh
@@ -91,9 +90,15 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv vcs history)
 
 # PATH
 export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
- 
-PATH=${CUDA_HOME}/bin:~/.local/bin/:${PATH} 
-export PATH 
-alias vim="nvim"
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64
+
+export PATH=${CUDA_HOME}/bin:~/.local/bin/:${PATH}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias vim="nvim"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOM=$HOME/.devel
+export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper_lazy.sh
