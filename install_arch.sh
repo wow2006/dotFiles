@@ -29,16 +29,26 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 cp .zshrc ~
 
-sudo pacman -S \
-     ctags     \
-     cmake     \
-     clang     \
-     xclip     \
-     neovim    \
+# Install Neovim
+sudo pacman -S           \
+     ctags               \
+     cmake               \
+     clang               \
+     xclip               \
+     neovim              \
+     ninja               \
+     gdb                 \
+     lldb                \
+     the_silver_searcher \
+     tree                \
+     npm                 \
      --noconfirm
 
+sudo npm i js-beautify \
+           neovim -g
+
 printf 'alias vim="nvim"' >> ~/.zshrc
-     
+
 # nvim config
 cp .vim ~ -r
 mkdir -p $HOME/.config/nvim
@@ -75,15 +85,20 @@ aurman -S         \
      --noconfirm
 
 # pysdl2 -> keysound
-pip3 install pysdl2 pynvim --user
-sudo pacman -S \
-  sdl2  \
+sudo pacman -S  \
+     sdl2       \
      sdl2_mixer \
      --noconfirm
 
 # common utilities
-pip3 install --user \
-     cmake-checker  \ # check modern cmake
-     cmake-format   \ # format cmake file
-     cppman         \ # man for modern c++
-     tldr             # community-driven man pages
+pip3 install --user        \
+             pysdl2        \
+             pynvim        \
+             cmake-checker \
+             cmake-format  \
+             cppman        \
+             tldr          \
+             pipx
+
+pipx install gdbgui
+
