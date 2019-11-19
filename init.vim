@@ -7,15 +7,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Start NERDtree
 Plug 'scrooloose/nerdtree'
-" color tender
-Plug 'jacoborus/tender.vim'
-" Start Tagbar
+" Themes
+Plug 'dikiaap/minimalist'
+" Themes
 Plug 'majutsushi/tagbar'
 " End Tagbar
-" Start LanguageClient-neovim
-Plug 'ycm-core/YouCompleteMe'
-Plug 'arakashic/chromatica.nvim'
-" End LanguageClient-neovim
+" Start LanguageClient
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+" End LanguageClient
 " Start Doxygen
 Plug 'mrtazz/DoxygenToolkit.vim'
 " End Doxygen
@@ -65,13 +67,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Eye friendly mode
 Plug 'TaDaa/vimade'
-" CMake vim
-Plug 'vhdirk/vim-cmake'
 " vim-diff
 Plug 'tpope/vim-fugitive'
-" neomake
-Plug 'neomake/neomake'
-" neomake
 
 
 function! DoRemote(arg)
@@ -94,6 +91,5 @@ source ~/.vim/hotkey.vim
 source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
+source ~/.vim/language_client.vim
 source ~/.vim/vimade.vim
-source ~/.vim/youcompleteme.vim
-source ~/.vim/chromatica.vim

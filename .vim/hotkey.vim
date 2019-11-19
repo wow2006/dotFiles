@@ -27,6 +27,10 @@ nmap ga <Plug>(EasyAlign)
 " Fix tab/Index
 map <F9> mzgg=G`z
 
+" Next buffer
+nmap gn :bn<CR>
+nmap gb :bp<CR>
+
 " Map omnifunc to Ctrl-Space
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ "\<lt>C-n>" :
@@ -66,7 +70,3 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-
-nmap gn :bn<CR>
-nmap gb :bp<CR>
-
