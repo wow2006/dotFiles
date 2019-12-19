@@ -44,7 +44,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Theme
 syntax enable
-colorscheme tender
+colorscheme minimalist
 
 " Quit with :Q
 command -nargs=0 Quit :qa!

@@ -13,10 +13,7 @@ Plug 'dikiaap/minimalist'
 Plug 'majutsushi/tagbar'
 " End Tagbar
 " Start LanguageClient
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'ycm-core/YouCompleteMe'
 " End LanguageClient
 " Start Doxygen
 Plug 'mrtazz/DoxygenToolkit.vim'
@@ -64,7 +61,7 @@ Plug 'peterhoeg/vim-qml'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
+Plug 'wow2006/vim-snippets'
 " Eye friendly mode
 Plug 'TaDaa/vimade'
 " vim-diff
@@ -91,5 +88,5 @@ source ~/.vim/hotkey.vim
 source ~/.vim/DoxygenToolKit.vim
 source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
-source ~/.vim/language_client.vim
 source ~/.vim/vimade.vim
+source ~/.vim/youcompleteme.vim
