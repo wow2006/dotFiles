@@ -90,3 +90,5 @@ source ~/.vim/syntax.vim
 source ~/.vim/bookmark.vim
 source ~/.vim/vimade.vim
 source ~/.vim/youcompleteme.vim
+source ~/.vim/indentLine.vim
+
