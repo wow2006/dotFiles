@@ -14,10 +14,10 @@ set hlsearch
 set ignorecase
 set smartcase
 " TAB Control
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set smarttab
 " Set Terminal Tab to name of VIM file
 " Don't set the title to 'Thanks for flying Vim' when exiting

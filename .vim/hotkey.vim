@@ -24,38 +24,12 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" Fix tab/Index
-map <F9> mzgg=G`z
-
-" Next buffer
+" Move to next tab
 nmap gn :bn<CR>
 nmap gb :bp<CR>
 
-" Map omnifunc to Ctrl-Space
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-
-function SetLSPShortcuts()
-  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
-endfunction()
-
-augroup LSP
-  autocmd!
-  autocmd FileType cpp,c call SetLSPShortcuts()
-augroup END
+" Fix tab/Index
+map <F9> mzgg=G`z
 
 " Disable Mouse
 set mouse=r
@@ -70,3 +44,24 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+command RemoveWindowNewLine :%s///g<CR>
+
+" FixIt  GetDoc  GetDocImprecise  GetParent  GetType  GetTypeImprecise  GoTo  GoToDeclaration  GoToDefinition  GoToImprecise  GoToInclude
+" YouCompleteMe
+function SetYouCompleteMeShortcuts()
+    nnoremap <leader>lf :YcmCompleter FixIt<CR>
+    nnoremap <leader>ld :YcmCompleter GetDoc<CR>
+    nnoremap <leader>lm :YcmCompleter GetDocImprecise<CR>
+    nnoremap <leader>lp :YcmCompleter GetParent<CR>
+    nnoremap <leader>lt :YcmCompleter GetType<CR>
+    nnoremap <leader>lg :YcmCompleter GoTo<CR>
+    nnoremap <leader>lc :YcmCompleter GoToDeclaration<CR>
+    nnoremap <leader>lf :YcmCompleter GoToDefinition<CR>
+    nnoremap <leader>li :YcmCompleter GoToInclude<CR>
+endfunction()
+
+augroup YCM
+    autocmd!
+    autocmd FileType cpp,c call SetYouCompleteMeShortcuts()
+augroup END
