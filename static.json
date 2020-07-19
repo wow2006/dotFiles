@@ -1,8 +1,0 @@
-{
-  "pvs":
-    {"command": ["pvs-studio-analyzer analyze", "plog-converter -a %s -t errorfile PVS-Studio.log"], "tempFile": "/tmp/static/pvs", "needBuild": true},
-  "clang-tidy":
-    {"command": ["clang-tidy -format-style=file -p %s -checks=%s %s"], "needBuild": true, "tempFile": "/tmp/static/clang-tidy"},
-  "cppcheck" :
-    { "command" : ["cppcheck -q --language=c++ --project=compile_commands.json --enable=all %s"], "needBuild": true, "tempFile": "/tmp/static/cppcheck"}
-}

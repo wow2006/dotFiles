@@ -1,0 +1,15 @@
+build-essential
+zsh
+tmux
+git
+python3-pip
+cmake
+python3-dev
+xclip
+ninja-build
+silversearcher-ag
+cppcheck
+valgrant
+tree
+libsdl2-dev
+libsdl2-mixer-dev
