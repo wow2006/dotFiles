@@ -1,0 +1,25 @@
+{
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": ["cmake"],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        }
+    },
+    "list.source.grep.command": "ag",
+    "clangd.path": "/usr/bin/clangd",
+    "flutter.lsp.initialization.closingLabels": true,
+    "clangd.arguments": ["--pch-storage=memory", "-j", "20", "--completion-style=detailed", "--background-index", "--all-scopes-completion=true"],
+    "semanticTokens.enable": true
+}

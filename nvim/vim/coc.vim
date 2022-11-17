@@ -15,6 +15,9 @@ endfunction
 " Use C to open coc config
 call SetupCommandAbbrs('C', 'CocConfig')
 
+" Select from complete
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -24,18 +27,18 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
+  " else
+  "   call CocAction('doHover')
   endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold  * silent call CocActionAsync('highlight')
+"autocmd CursorHold  * silent call CocActionAsync('highlight')
 "autocmd CursorHoldI * silent call CocActionAsync('showSignatureHelp')
-autocmd CursorHoldI * silent call CocActionAsync('doHover')
+"autocmd CursorHoldI * silent call CocActionAsync('doHover')
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call CocAction('fold', <f-args>)
+"command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -137,3 +140,12 @@ function! LightlineGitBlame() abort
   return winwidth(0) > 120 ? blame : ''
 endfunction
 
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)

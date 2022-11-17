@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/ahussein/Documents/sourceCode/algorithms/DataStructures/build/Debug/GNU/LinkedList'
+let g:netrw_dirhist_2='/home/ahussein/Documents/sourceCode/algorithms/DataStructures/build/Debug/GNU'
+let g:netrw_dirhist_1='/home/ahussein/Documents/sourceCode/cpp/Graphics/Focus/GraphicsDemos/src/mimicOpenGL'
