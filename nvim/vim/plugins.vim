@@ -9,27 +9,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 " theme
 Plug 'dikiaap/minimalist'
-"
+" tagbar
 Plug 'majutsushi/tagbar'
 " Doxygen
 Plug 'mrtazz/DoxygenToolkit.vim'
-" Format
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-"
-Plug 'Yggdroot/indentLine'
-"
-Plug 'MattesGroeger/vim-bookmarks'
-"
+" align
 Plug 'junegunn/vim-easy-align'
-"
-Plug 'Konfekt/FastFold'
 " icons
 Plug 'ryanoasis/vim-devicons'
-" snippets
-Plug 'SirVer/ultisnips'
-Plug 'wow2006/vim-snippets'
 " man
 Plug 'jez/vim-superman'
 " FZF
