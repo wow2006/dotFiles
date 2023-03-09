@@ -13,3 +13,4 @@ valgrant
 tree
 libsdl2-dev
 libsdl2-mixer-dev
+fzf

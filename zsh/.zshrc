@@ -1,30 +1,46 @@
-if [ -f "$HOME/.shell_utils/oh-my-zsh.sh" ]; then
-  source $HOME/.shell_utils/oh-my-zsh.sh
-fi
+source $HOME/.shellUtilities/antigen.zsh
 
-if [ -f "$HOME/.shell_utils/cuda.sh" ]; then
-  source $HOME/.shell_utils/cuda.sh
-fi
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-if [ -f "$HOME/.shell_utils/path.sh" ]; then
-  source $HOME/.shell_utils/path.sh
-fi
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle <<EOBUNDLES
+  git
+  tmux
+  python
+  history
+  history-substring-search
+  archlinux
+  command-not-found
+  fzf
+  man
+  pip
+  poetry
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+  unixorn/warhol.plugin.zsh
+  zsh-users/zsh-syntax-highlighting # must be last plugin to
+  djui/alias-tips
+EOBUNDLES
 
-if [ -f "$HOME/.shell_utils/alias.sh" ]; then
-  source $HOME/.shell_utils/alias.sh
-fi
+# Load the theme.
+antigen theme romkatv/powerlevel10k
 
-if [ -f "$HOME/.shell_utils/virtualenvs.sh" ]; then
-  source $HOME/.shell_utils/virtualenvs.sh
-fi
+# Tell Antigen that you're done.
+antigen apply
 
-if [ -f "$HOME/.shell_utils/funtions.sh" ]; then
-  source $HOME/.shell_utils/funtions.sh
-fi
+# POWERLEVEL
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv vcs history)
+# fzf binding
+[ -f ~/.key-bindings.zsh ] && source ~/.key-bindings.zsh
+# EXPORT
+export PATH=$HOME/.local/bin:$PATH
+# alias
+alias vim=/usr/bin/nvim
+alias gst="git status"
+#alias gaf="git add $(git ls-files -m -o --exclude-standard | fzf -m)"
+alias cpwd="pwd | tr -d '\n' | xclip -selection clipboard "
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Color man command
-export PAGER="most"
-export EDITOR=nvim
-
+enable_gdb="echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope"
