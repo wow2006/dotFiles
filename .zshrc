@@ -88,17 +88,4 @@ source $ZSH/oh-my-zsh.sh
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv vcs history)
 
-# PATH
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64
-
-export PATH=${CUDA_HOME}/bin:~/.local/bin/:${PATH}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 alias vim="nvim"
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOM=$HOME/.devel
-export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
-source $HOME/.local/bin/virtualenvwrapper_lazy.sh
