@@ -1,8 +1,0 @@
-__global__
-__device__
-__shared__
-__syncthreads();
-threadIdx
-blockIdx
-blockDim
-
