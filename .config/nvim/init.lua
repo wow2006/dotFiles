@@ -107,26 +107,49 @@ require("lazy").setup({
     priority=1000,
     config = function()
       vim.cmd([[colorscheme minimalist]])
-      print("minimalist")
     end
   },
   {
-    'vim-airline/vim-airline',
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup{}
+    end
+  },
+  {
+    'nvim-lualine/lualine.nvim',
     lazy=false,
     dependencies = {
-      "vim-airline/vim-airline-themes",
-      "ryanoasis/vim-devicons",
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      print("airline")
-      g["airline_theme"] = 'minimalist'
-      g['airline#extensions#tabline#enabled'] = 1
-      g['airline_powerline_fonts'] = 1
-      -- Enable the list of buffers
-      g['airline#extensions#tabline#enabled'] = 1
-      -- Show just the filename
-      g['airline#extensions#tabline#fnamemod'] = ':t'
-      g['g:airline#extensions#tabline#formatter'] = 'unique_tail'
+      require('lualine').setup{
+        options = {
+          icons_enabled = true,
+          component_separators = { left = '', right = ''},
+          section_separators = { left = '', right = ''},
+          always_divide_middle = true,
+          globalstatus = false,
+          refresh = {
+            statusline = 1000,
+          },
+          sections = {
+            lualine_a = {'mode'},
+            lualine_b = {'diff', 'diagnostics'},
+            lualine_c = {},
+            lualine_x = {'encoding', 'fileformat', 'filetype'},
+            lualine_y = {'progress'},
+            lualine_z = {'location'}
+          },
+          extensions = {
+            'man',
+            'quickfix',
+            'trouble',
+            'trouble',
+          },
+        }
+      }
     end
   },
   {
@@ -136,7 +159,10 @@ require("lazy").setup({
   {
     'neoclide/coc.nvim',
     lazy=false,
-    branch='release'
+    branch='release',
+    config = function()
+      vim.cmd [[source /home/ahussein/.config/nvim/vim/coc.vim]]
+    end
   },
   {
     'scrooloose/nerdtree',
@@ -163,7 +189,7 @@ require("lazy").setup({
     dependencies = {
       'google/vim-maktaba'
     },
-    lazy=true,
+    lazy=false,
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -179,7 +205,7 @@ require("lazy").setup({
   },
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy=true,
+    lazy=false,
     config = function()
       cmd([[:TSUpdate]])
       require'nvim-treesitter.configs'.setup {
@@ -224,7 +250,7 @@ require("lazy").setup({
   },
   {
     'junegunn/vim-easy-align',
-    lazy=true,
+    lazy=false,
     config = function()
       -- Start interactive EasyAlign in visual mode (e.g. vipga)
       cmd('xmap ga <Plug>(EasyAlign)')
@@ -235,6 +261,39 @@ require("lazy").setup({
   {
     'jez/vim-superman',
     lazy=true,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
   }
 })
 -- ================================================================
