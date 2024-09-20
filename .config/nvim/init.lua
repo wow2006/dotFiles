@@ -72,6 +72,12 @@ opt.undodir = "/tmp/undodir"
 cmd("set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor")
 -- folding
 opt.foldmethod='indent'
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "TelescopeResults",
+    callback = function()
+        vim.opt_local.foldenable = false
+    end,
+})
 -- Disable Mouse
 opt.mouse='r'
 -- indentLine
@@ -197,10 +203,12 @@ require("lazy").setup({
       'nvim-lua/plenary.nvim',
     },
     lazy=false,
-    tag='0.1.6',
+    tag='0.1.8',
     config = function()
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+      vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+      vim.keymap.set('n', '<C-f>', builtin.live_grep, { desc = 'Telescope live grep' })
+      vim.keymap.set('n', '<C-h>', builtin.help_tags, { desc = 'Telescope help tags' })
     end
   },
   {
@@ -265,9 +273,7 @@ require("lazy").setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
+    opts = {},
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
@@ -275,7 +281,16 @@ require("lazy").setup({
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
-    }
+    },
+    config = function()
+      require("noice").setup({
+        -- you can enable a preset for easier configuration
+        presets = {
+          bottom_search = true,   -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
+        },
+      })
+    end
   },
   {
     "folke/which-key.nvim",
