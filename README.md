@@ -46,4 +46,5 @@ $ python -m pip install powerline-status powerline-mem-segment
 $ find . -type f -name "powerline.conf" # Edit ~/.tmux.conf with find output
 $ export PATH=$HOME/.config/dotFiles/.env/bin:$PATH >> ~/.zshrc
 $ ln -s ~/.config/dotFiles/.tmux.conf ~/.tmux.conf
+$ ln -s ~/.config/dotFiles/.config/powerline/ ~/.config/
 ```
