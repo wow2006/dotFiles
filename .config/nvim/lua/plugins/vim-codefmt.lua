@@ -1,7 +1,5 @@
 return {
   'google/vim-codefmt',
-  dependencies = {
-    'google/vim-maktaba'
-  },
-  lazy=false,
+  cmd          = { 'FormatCode', 'FormatLines', 'AutoFormatBuffer' },
+  dependencies = { 'google/vim-maktaba' },
 }
