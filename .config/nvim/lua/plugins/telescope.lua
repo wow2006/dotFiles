@@ -1,15 +1,17 @@
 return {
   'nvim-telescope/telescope.nvim',
+  branch       = 'master',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-fzf-native.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
-  lazy=false,
-  tag='0.1.8',
+  keys = {
+    { '<C-P>', function() require('telescope.builtin').find_files() end, desc = 'Telescope find files' },
+    { '<C-f>', function() require('telescope.builtin').live_grep()  end, desc = 'Telescope live grep'  },
+    { '<C-h>', function() require('telescope.builtin').help_tags()  end, desc = 'Telescope help tags'  },
+  },
   config = function()
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<C-P>', builtin.find_files, { desc = 'Telescope find files' })
-    vim.keymap.set('n', '<C-f>', builtin.live_grep, { desc = 'Telescope live grep' })
-    vim.keymap.set('n', '<C-h>', builtin.help_tags, { desc = 'Telescope help tags' })
-  end
+    require('telescope').setup{}
+    require('telescope').load_extension('fzf')
+  end,
 }
